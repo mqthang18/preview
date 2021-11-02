@@ -1,0 +1,12 @@
+:root {
+    /* TEmplate product by category size of characters */
+    --vw-width: 70vw;
+    --p-fontsize: 15px;
+    --h-fontsize: 30px;
+    --c--characterWeight: 900;  
+    
+    --w-leftcol: 20%;
+
+    --c-filter-bar-background: #fb5533;
+    --c-characters: white;
+}

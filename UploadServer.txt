@@ -1,0 +1,3 @@
+DBname: websale
+DB username: labMQT_abc
+DB password: /?d3\Y]9DyChd&ha

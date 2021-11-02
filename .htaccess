@@ -1,0 +1,21 @@
+# Bảo vệ file .htaccess
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Tránh hiển thị file trong thư mục
+Options All -Indexes
+# Bật chức năng Rewrite
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+# Chuyển HTTP -> HTTPS để đạt chuẩn secure trong browser warning 
+
+# Sử dụng cú pháp ^(.*)$ để get tất cả string ở vị trí $1 sau url 
+RewriteRule ^(.+)$ index.php?url=$1 
+
+
+
+

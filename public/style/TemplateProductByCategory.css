@@ -1,0 +1,148 @@
+.container {
+    height: fit-content;
+}
+
+.Pa-container {
+    display: flex;    
+    width: var(--vw-width);
+    margin: auto;
+    background-color: rgb(209, 204, 204);
+}
+
+.Child-ListProduct {
+    width: 100%;
+}
+
+.Child-ListProduct > table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding-top: 20px;
+    /* table-layout: fixed;  */
+    width: max-content;
+}
+
+.filter-bar {
+    width: var(--vw-width);
+    background-color: var(--c-filter-bar-background);
+    min-height: 70px;
+    margin: auto;
+    position: relative;
+}
+
+.filter-bar ul {
+    display: inline-flex;
+    list-style-type: none;
+    padding-top: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.filter-bar > ul > li {
+    padding: 5px 10px 5px 10px;
+}
+
+.filter-bar > ul > li:nth-child(4) {
+    margin-left: auto;
+
+}
+.filter-bar > ul > li:nth-child(4) > ul {
+    list-style-type: none;
+    display: inline-flex;
+}
+
+.filter-bar > ul > li:nth-child(6) > ul > li {
+    padding-left: 10px;
+}
+
+.filter-bar > ul button {
+    border-radius: 0%;
+    border-color: rgb(202, 196, 196);
+    padding: 5px;
+    background: rgb(202, 196, 196);
+}
+
+.arrow {
+border: solid black;
+border-width: 0 3px 3px 0;
+display: inline-block;
+padding: 3px;
+}
+
+.right {
+transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg);
+}
+
+.left {
+transform: rotate(135deg);
+-webkit-transform: rotate(135deg);
+}
+
+/* Child ListProduct */
+
+.Child-ListProduct > table {
+    /* margin: auto; */
+    width: max-content;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.Child-ListProduct > table > tr, td {
+    height: 200px;
+    border: none;
+    padding: 5px;
+    text-align: center;
+}
+
+.image {
+    width: 200px;
+    height: 150px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+/* SideBar */
+.Pa-container > .Sidebar {
+    width: var( --w-leftcol);
+}
+
+.Pa-container > .Child-ListProduct { 
+    width: calc(100% - var( --w-leftcol));
+    display: block;
+}
+
+div.Pa-container > .Sidebar > ul, a, h3 {
+    list-style-type: none;
+    text-decoration: none;
+    padding-left: 30px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 900px) {
+    .filter-bar, .Pa-container {
+        width: 100vw;
+    }
+
+    :root {
+        --p-fontsize: 10px;
+        --h-fontsize: 15px;  
+
+        --w-leftcol: 100%;
+    }
+    .Pa-container > .Child-ListProduct {
+        width: var(--w-leftcol);
+    }
+    .Pa-container {
+        flex-direction: column;
+    }
+
+    
+}
+
+@media screen and (max-width: 500px) {
+    .filter-bar > a {
+        display: none;
+    }
+}

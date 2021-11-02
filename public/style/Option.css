@@ -1,0 +1,16 @@
+.option > ul {
+    padding-top: 5px;
+    list-style-type: none;
+}
+
+.option > ul > li {
+    padding: 10px 0px 10px 0px;
+}
+
+.option > ul > li > div {
+    display: inline-flex;
+}
+
+.option > ul > li > div > span {
+    padding-top: 20px;
+}

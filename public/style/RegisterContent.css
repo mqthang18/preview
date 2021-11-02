@@ -1,0 +1,40 @@
+
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .parent-container {
+            background-color: rgb(182, 178, 178);
+            padding: 10px 0px 10px 0px;
+
+        }
+
+        .parent-container > form {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+        }
+
+        label {display: block; font-family: Segoe UI; font-weight: 500;}
+        form input {width: 80%;}
+        .first-child, .second-child, .button {
+            padding: 10px 10px 10px 10px;
+        }
+
+        .parent-container > form > .button {
+            text-align: right;
+        }
+
+        .parent-container > form > .button > button{
+            color: white;
+            background-color: red;
+            padding: 10px;
+        }
+
+        .parent-container > form > .button > button:hover {
+            background-color: tomato;
+            cursor: pointer;
+            transition: 0.1s;
+        }

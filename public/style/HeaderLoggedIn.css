@@ -1,0 +1,51 @@
+a {display: block;height: 100%; padding: unset;}
+
+nav > ul > li:nth-child(6) {
+    width: 200px;
+    position: relative;
+    text-align: center;
+    /* float: left; */
+}
+
+
+ul.Account { 
+    padding-top: 10px;
+    list-style: none;
+    width: 90%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: yellowgreen;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+ul.Account > li {
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    opacity: 0.6;
+}
+
+ul.Account > li > a {
+    color: black;
+    text-decoration: none;
+}
+
+nav > ul > li:nth-child(6):hover > a {
+    background-color: #9b2806;
+}
+
+nav > ul > li:nth-child(6):hover ul.Account {
+    visibility: visible;
+    opacity: 1;
+}
+
+nav > ul > li:nth-child(6) > .Account > li:hover {
+    background-color: rgb(77, 110, 10);
+    opacity: 1;
+}
+
+nav > ul > li:nth-child(6) > .Account > li:hover a {
+    color: white;
+}
