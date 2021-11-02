@@ -88,7 +88,10 @@ function Redirect() {
 function GetValueSortProduct() {
     var Rvalue1 = document.getElementById('Regular1').value;
     var Rvalue2 = document.getElementById('Regular2').value;
-
-    alert(Rvalue1)
-    alert(Rvalue2)
+    var param = '?a='.concat(Rvalue1, '&b=',Rvalue2);
+    // alert(Rvalue1)
+    // alert(Rvalue2)
+    var url = location.protocol + '//' + location.host + location.pathname+param;
+    // alert(url);
+    location.href = url;
 }
