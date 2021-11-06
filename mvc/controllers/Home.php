@@ -59,9 +59,9 @@
             $query_str = parse_url($actual_link, PHP_URL_QUERY);
             parse_str($query_str, $query_params);
             if (isset($query_params['a']) && isset($query_params['b'])) {
-                $result = $this->model('Category')-> SearchProduct($a, $conn, $query_params['a'], $query_params['b']);
+                $result = $arr-> SearchProduct($a, $conn, $query_params['a'], $query_params['b']);
             } else {
-                $result = $this->model('Category')-> SearchProduct($a, $conn);
+                $result = $arr-> SearchProduct($a, $conn);
             }
             
             $Cproduct = $arr->Category($conn);
