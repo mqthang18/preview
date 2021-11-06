@@ -1,8 +1,8 @@
 <?php
     class Home extends Controller {
-        function Home($a) {
+        function HomePage($a) {
             $conn = $this->Conn();
-            $arr = $this->model("Category"); 
+            $arr = $this->model("Category", $conn); 
             $Cproduct = $arr->Category($conn);
             $Hproduct = $arr->HProduct($conn);
 
@@ -15,9 +15,21 @@
 
         function ProductByCategory($a, $b) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
-            $result = $arr->ListItem($b, $conn);
+            $arr = $this->model("Category", $conn);
+            
             $Cproduct = $arr->Category($conn);
+
+            
+            $actual_link = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+            $query_str = parse_url($actual_link, PHP_URL_QUERY);
+            parse_str($query_str, $query_params);
+            if (isset($query_params['a']) && isset($query_params['b'])) {
+                $result = $arr->ListItem($b, $conn, $query_params['a'], $query_params['b']);
+            } else {
+                $result = $arr->ListItem($b, $conn);
+            }
+            
+
 
             $view = $this->view("master-1", [
                 "page" => "ProductByCategory",
@@ -29,14 +41,10 @@
 
         function ProductByItem($a=null,$b=null,$c=null) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
-            // echo $a;
-            // echo $b;
-            // echo $c;
-            
+            $arr = $this->model("Category", $conn);
+
             $result = $arr->ProductInfo($b,$c,$conn);
 
-            // print_r($result);
             $view = $this->view("master-1", [
                 "page" => "ProductByItem",
                 "item" => $result
@@ -45,10 +53,18 @@
 
         function Search ($a) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
+            $arr = $this->model("Category", $conn);
+
+            $actual_link = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+            $query_str = parse_url($actual_link, PHP_URL_QUERY);
+            parse_str($query_str, $query_params);
+            if (isset($query_params['a']) && isset($query_params['b'])) {
+                $result = $this->model('Category')-> SearchProduct($a, $conn, $query_params['a'], $query_params['b']);
+            } else {
+                $result = $this->model('Category')-> SearchProduct($a, $conn);
+            }
+            
             $Cproduct = $arr->Category($conn);
-            $result = $this->model('Category')-> SearchProduct($a, $conn);
-            // print_r($paths);
             
             $view = $this->view("master-1", [
                 "page" => "ProductByCategory",
@@ -59,7 +75,7 @@
 
         function Test($a) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
+            $arr = $this->model("Category", $conn);
             $Hproduct = $arr->ListItem($conn, $a);
             $result = $Hproduct;
             echo $a."<br>";

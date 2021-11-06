@@ -12,10 +12,23 @@
             return $result; 
         }
 
-        public function ListItem($condition, $conn) {
-            $sql = "SELECT Masp, ProductName, Price FROM listitem WHERE MaPLsp = '".$condition."'";
+        public function ListItem($condition, $conn, $paramA=null, $paramB=null) {
+            if (isset($paramA) && isset($paramB)) {
+                switch ([$paramA, $paramB]) {
+                    case ['New', 'Decreasing']: 
+                        $sql = "SELECT Masp, ProductName, Price FROM listitem WHERE MaPLsp = '".$condition."' ORDER BY `Price` DESC, `Datetime` DESC";
+                        break; 
+                    case ['New', 'Increasing']: 
+                        $sql = "SELECT Masp, ProductName, Price FROM listitem WHERE MaPLsp = '".$condition."' ORDER BY `Price` ASC, `Datetime` DESC";
+                        break;     
+                }
+            } else {
+                $sql = "SELECT Masp, ProductName, Price FROM listitem WHERE MaPLsp = '".$condition."'";
+            }
+            
+           
             $result = $conn->query($sql);
-
+            // echo $sql; 
             $path = "./public/image/ListProduct/Category/".$condition;  
             $paths = [];
             if ($result->num_rows > 0) {
@@ -37,8 +50,22 @@
             return $paths;
         }
 
-        public function SearchProduct($condition, $conn) {
-            $sql = "SELECT * FROM `listitem` WHERE `ProductName` LIKE '%".$condition."%'";
+        public function SearchProduct($condition, $conn, $paramA=null, $paramB=null) {
+            
+            if (isset($paramA) && isset($paramB)) {
+                switch ([$paramA, $paramB]) {
+                    case ['New', 'Decreasing']: 
+                        $sql = "SELECT * FROM `listitem` WHERE `ProductName` LIKE '%".$condition."%' ORDER BY `Price` DESC, `Datetime` DESC";
+                        break; 
+                    case ['New', 'Increasing']: 
+                        $sql = "SELECT * FROM `listitem` WHERE `ProductName` LIKE '%".$condition."%' ORDER BY `Price` ASC, `Datetime` DESC";
+                        break;     
+                }
+            } else {
+                $sql = "SELECT * FROM `listitem` WHERE `ProductName` LIKE '%".$condition."%'";
+            }
+            
+         
             $result = $conn -> query($sql);
             $paths = [];
             $path = "./public/image/ListProduct/Category/";
@@ -54,7 +81,7 @@
             return $paths;
         }
 
-        public function ProductInfo($cat,$condition, $conn) {
+        public function ProductInfo($cat,$condition,$conn) {
             $sql = "SELECT * FROM listitem WHERE Masp = '".$condition."'";
             $result = $conn->query($sql);
             // /preview/public/image/ListProduct/Category/TPTag/QAo1/QAo1-1.jpg

@@ -97,6 +97,7 @@ transform: rotate(135deg);
 .image {
     width: 200px;
     height: 150px;
+    border-radius: 5% 5% 0% 0%;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
@@ -128,7 +129,6 @@ div.Pa-container > .Sidebar > ul, a, h3 {
     :root {
         --p-fontsize: 10px;
         --h-fontsize: 15px;  
-
         --w-leftcol: 100%;
     }
     .Pa-container > .Child-ListProduct {
@@ -137,12 +137,24 @@ div.Pa-container > .Sidebar > ul, a, h3 {
     .Pa-container {
         flex-direction: column;
     }
-
     
+    .Pa-container > .Sidebar > .allCategory {
+        margin-top: 12px;
+    }
+    
+    
+    .allCategory > h3 {
+        font-weight: 700;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .filter-bar > a {
         display: none;
     }
+    
+    .filter-bar > ul > li > form > select {
+        width: 50px;
+    }
 }
+

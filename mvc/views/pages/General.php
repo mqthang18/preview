@@ -19,7 +19,7 @@
                     ?>                            
                             <div class="card">
                                 <div>
-                                    <input id="<?php echo $ID;?>" class="image" type="image" onclick="getIDCategory(this.id)" src="<?php echo $path;?>" alt="">
+                                    <input id="<?php echo $ID;?>" class="image" type="image" onclick="getIDCategory(this.id)" src="<?php echo $path;?>" alt="category">
                                     <p><?php echo $title;?></p>
                                 </div>  
                             </div>
@@ -53,7 +53,7 @@
                 ?>    
                     <div class="card">
                         <button id="<?php echo $ID;?>" onclick="GotoItemInfor(this.id)">
-                            <input class="image" type="image" src=<?php echo $pathfiles;?>>
+                            <input class="image" type="image" src=<?php echo $pathfiles;?> alt="h-product">
                             <p><?php echo $label?></p>
                         </button>
                     </div>

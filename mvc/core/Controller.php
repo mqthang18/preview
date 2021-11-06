@@ -1,6 +1,6 @@
 <?php
     class Controller {
-        public function model($model, $data=[]) {
+        public function model($model, $conn, $data=[]) {
             require_once "./mvc/models/".$model.".php";
             return new $model;
         }
