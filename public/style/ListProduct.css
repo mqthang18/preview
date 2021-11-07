@@ -8,11 +8,11 @@
         .item {
             display:flex;
             width: 92%;
-            overflow: scroll; 
+            /* overflow: scroll; 
             overflow-x: hidden;
-            overflow-y: hidden; 
+            overflow-y: hidden;  */
             margin: auto; 
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth; */
         }
         
         .item::-webkit-scrollbar-track
