@@ -2,7 +2,7 @@
     class Home extends Controller {
         function Home($a) {
             $conn = $this->Conn();
-            $arr = $this->model("Category"); 
+            $arr = $this->model("Category", $conn); 
             $Cproduct = $arr->Category($conn);
             $Hproduct = $arr->HProduct($conn);
 
@@ -15,7 +15,7 @@
 
         function ProductByCategory($a, $b) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
+            $arr = $this->model("Category", $conn);
             
             $Cproduct = $arr->Category($conn);
 
@@ -41,7 +41,7 @@
 
         function ProductByItem($a=null,$b=null,$c=null) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
+            $arr = $this->model("Category", $conn);
 
             $result = $arr->ProductInfo($b,$c,$conn);
 
@@ -53,15 +53,15 @@
 
         function Search ($a) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
+            $arr = $this->model("Category", $conn);
 
             $actual_link = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
             $query_str = parse_url($actual_link, PHP_URL_QUERY);
             parse_str($query_str, $query_params);
             if (isset($query_params['a']) && isset($query_params['b'])) {
-                $result = $this->model('Category')-> SearchProduct($a, $conn, $query_params['a'], $query_params['b']);
+                $result = $arr-> SearchProduct($a, $conn, $query_params['a'], $query_params['b']);
             } else {
-                $result = $this->model('Category')-> SearchProduct($a, $conn);
+                $result = $arr-> SearchProduct($a, $conn);
             }
             
             $Cproduct = $arr->Category($conn);
@@ -75,7 +75,7 @@
 
         function Test($a) {
             $conn = $this->Conn();
-            $arr = $this->model("Category");
+            $arr = $this->model("Category", $conn);
             $Hproduct = $arr->ListItem($conn, $a);
             $result = $Hproduct;
             echo $a."<br>";
