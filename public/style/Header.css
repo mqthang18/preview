@@ -1,7 +1,14 @@
 
 /* Navigation bar */
+header {
+    min-height: 176px;
+    background: linear-gradient(to top, #ff9900 5%, #ff0000 41%);
+}
+
+
 .navbar-light .navbar-nav .nav-link {color: white;}
-.bg-nav {background-color: #fb5533;}
+/* .bg-nav {background-color: #fb5533;} */
+
 
 
 /* Search tool */
@@ -35,7 +42,7 @@
 }
 
 .Nav-Secondary {
-    background: #fb5533;
+    /* background: #fb5533; */
     position: relative;
     padding: 20px 0px 20px 0px;
 }
