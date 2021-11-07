@@ -11,7 +11,7 @@
             <form action="#" method="get">
                 <select name="ByLevelSales" id="Regular1"  style="height: var(-p--fontsize); border-radius: 0%;">
                     <option value="New">Mới nhất</option>
-                    <option value="Hot">Bán chạy</option>
+                    <option value="">Bán chạy</option>
                 </select>
             </form>
         </li>
@@ -78,7 +78,7 @@
                             <td>
                                 <div class="CartPByItem">
                                     <button id="<?php echo $ID;?>" onclick="GotoItemInfor(this.id)">
-                                        <input class="image" type="image" src="<?php echo "/preview".substr($arr[$ID][0],1);?>">
+                                        <input class="image" type="image" src="<?php echo "/preview".substr($arr[$ID][0],1);?>" alt="c-product">
                                         <p style="font-size:var(--p-fontsize); color: blue; font-weight: var(--c--characterWeight);"><?php echo $arr[$ID][1];?></p>
                                         <p style="font-size:var(--p-fontsize)">Giá: <span style="color:red; font-weight: var(--c--characterWeight);"><?php echo $arr[$ID][2];?></span> VND</p>
                                     </button>

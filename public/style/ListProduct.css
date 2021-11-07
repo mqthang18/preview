@@ -67,7 +67,9 @@
         }
 
         .card {
-            width: 30%; padding: 10px;
+            width: max-content; 
+            border: none;
+            padding: 10px;
             opacity: 40%;
         }
 
@@ -75,10 +77,10 @@
             transform: scale(1.05);
             opacity: 100%;
         }
-
+        
         .image {
-            width: 70px;
-            height: 70px;
+            width: 100%;
+            height: 100%;
             -webkit-user-drag: none;
             -khtml-user-drag: none;
             -moz-user-drag: none;

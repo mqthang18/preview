@@ -1,6 +1,6 @@
 <?php
     class Home extends Controller {
-        function Home($a) {
+        function HomePage($a) {
             $conn = $this->Conn();
             $arr = $this->model("Category", $conn); 
             $Cproduct = $arr->Category($conn);

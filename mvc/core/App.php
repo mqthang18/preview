@@ -2,7 +2,7 @@
     class App {
         // Proces Home/action/a/b/c string  
         protected $controller="Home";
-        protected $action="Home";
+        protected $action="HomePage";
         protected $params=["General"];
 
         function __construct() {

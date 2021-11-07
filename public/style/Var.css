@@ -1,4 +1,8 @@
 :root {
+    /* General template category item */
+    --w-c-item: 100px;
+    --h-c-item: 100px;
+
     /* TEmplate product by category size of characters */
     --vw-width: 70vw;
     --p-fontsize: 15px;

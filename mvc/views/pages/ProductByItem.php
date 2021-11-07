@@ -21,8 +21,8 @@
                             $filepath = "/preview/public/image/ListProduct/NoPreview.png";
                     ?>        
                         <div class="card">
-                            <button>
-                               <input id="i-1" class="image" type="image" src="<?php echo $filepath;?>" alt="">
+                            <button style="border: none;width: 70px;height: 70px;box-shadow: 1px 1px 2px 2px #b4b4b4;">
+                               <input id="i-1" class="image" type="image" src="<?php echo $filepath;?>" alt="preview-product">
                            </button>  
                        </div>
                     <?php   

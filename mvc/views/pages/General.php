@@ -17,10 +17,10 @@
                                 $title = $row["Title"];
                                 $path = $row["IconPath"];
                     ?>                            
-                            <div class="card">
-                                <div>
-                                    <input id="<?php echo $ID;?>" class="image" type="image" onclick="getIDCategory(this.id)" src="<?php echo $path;?>" alt="">
-                                    <p><?php echo $title;?></p>
+                            <div class="card" style="border: none;">
+                                <div id="<?php echo $ID;?>" onclick="getIDCategory(this.id)" style=" width: var(--w-c-item); height: max-content;  box-shadow: 1px 1px 2px 1px #6a6565; border-radius: 5% 5%;">
+                                    <input class="image" type="image" src="<?php echo $path;?>" alt="category">
+                                    <span style="font-size:.8rem;"><?php echo $title;?></span>
                                 </div>  
                             </div>
                     <?php  
@@ -53,7 +53,7 @@
                 ?>    
                     <div class="card">
                         <button id="<?php echo $ID;?>" onclick="GotoItemInfor(this.id)">
-                            <input class="image" type="image" src=<?php echo $pathfiles;?>>
+                            <input class="image" type="image" src=<?php echo $pathfiles;?> alt="h-product">
                             <p><?php echo $label?></p>
                         </button>
                     </div>

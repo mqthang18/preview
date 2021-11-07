@@ -1,3 +1,10 @@
+$(document).ready(function(){
+    if(localStorage.Rvalue1 && localStorage.Rvalue2) {
+        $('#Regular1').val(localStorage.Rvalue1);
+        $('#Regular2').val(localStorage.Rvalue2);
+    }
+})
+
 
 var dict = new Object;
 var dict = {
@@ -89,8 +96,10 @@ function GetValueSortProduct() {
     var Rvalue1 = document.getElementById('Regular1').value;
     var Rvalue2 = document.getElementById('Regular2').value;
     var param = '?a='.concat(Rvalue1, '&b=',Rvalue2);
-    // alert(Rvalue1)
-    // alert(Rvalue2)
+    
+    localStorage.setItem("Rvalue1", Rvalue1);
+    localStorage.setItem("Rvalue2", Rvalue2);
+
     var url = location.protocol + '//' + location.host + location.pathname+param;
     // alert(url);
     location.href = url;
