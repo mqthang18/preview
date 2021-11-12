@@ -18,4 +18,3 @@ RewriteRule ^(.+)$ index.php?url=$1
 
 
 
-

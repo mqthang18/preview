@@ -3,7 +3,13 @@ $(document).ready(function(){
         $('#Regular1').val(localStorage.Rvalue1);
         $('#Regular2').val(localStorage.Rvalue2);
     }
+    $("#search").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#search-btn").click();
+        }
+    });
 })
+
 
 
 var dict = new Object;

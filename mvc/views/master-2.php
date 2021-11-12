@@ -39,7 +39,7 @@
     <header>
         <?php require_once "./mvc/views/blocks/header.php"?>
     </header>
-    <div class="container">
+    <div class="container-parent">
         <?php require_once "./mvc/views/pages/".$data['page'].".php";?>
     </div>
     <footer>

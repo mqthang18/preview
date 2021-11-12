@@ -140,8 +140,6 @@
                             var arr = [username, email, phoneNum, address, geoLocation, item, Fee, MaPLsp, Masp];
 
                             if (arr[0].length != 0 & arr[1].length != 0 & arr[2].length != 0 & arr[3].length != 0) {
-                                $(".left").css("width","60%");
-                                $(".right").css("width", "40%");                                
                                 $.ajax({
                                 type: 'POST',
                                 url: '/preview/mvc/views/pages/Goods/VerifyInfor.php',

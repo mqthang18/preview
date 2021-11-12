@@ -33,7 +33,7 @@
             <input id="search" type="text" class="form-control" placeholder="Tìm kiếm">
         
             <div class="input-group-append">
-                <button class="btn btn-secondary" type="button" onclick="Redirect()">
+                <button id="search-btn" class="btn btn-secondary" type="button" onclick="Redirect()">
                 <i class="fa fa-search"></i>
             </button>
             </div>

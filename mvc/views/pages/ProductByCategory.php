@@ -55,9 +55,8 @@
                     <hr>
                 </div>
             </div>
-        <div class="Child-ListProduct" style="overflow: auto;">
-                    <table>
-                        <tr>
+        <div class="Child-ListProduct">
+                    <div style="display: flex; flex-wrap: wrap;">
                             <?php
                                   
                                     // print_r($arr);
@@ -69,28 +68,21 @@
                                     
                                     if(isset($arr)) {
                                      for ($i=0;$i<count($keys);$i++) {  
-                                         if ($i==4) {
-                                             echo "</tr>";
-                                         }  
-                                         
                                          $ID = $keys[$i];     
                             ?>    
-                            <td>
-                                <div class="CartPByItem">
+            
+                                <div class="CartPByItem" style="max-width: max-content;">
                                     <button id="<?php echo $ID;?>" onclick="GotoItemInfor(this.id)">
                                         <input class="image" type="image" src="<?php echo "/preview".substr($arr[$ID][0],1);?>" alt="c-product">
                                         <p style="font-size:var(--p-fontsize); color: blue; font-weight: var(--c--characterWeight);"><?php echo $arr[$ID][1];?></p>
                                         <p style="font-size:var(--p-fontsize)">Giá: <span style="color:red; font-weight: var(--c--characterWeight);"><?php echo $arr[$ID][2];?></span> VND</p>
                                     </button>
                                 </div>
-                            </td>  
                             <?php
                                     }
                                 }
                             ?>  
-                    </table>
-             
-           
+                    </div>
         </div>
 </div>
     

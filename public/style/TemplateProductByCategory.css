@@ -95,8 +95,8 @@ transform: rotate(135deg);
 }
 
 .image {
-    width: 200px;
-    height: 150px;
+    width: var(--w-imageproduct);
+    height: var(--h-imageproduct);
     border-radius: 5% 5% 0% 0%;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
@@ -119,8 +119,20 @@ div.Pa-container > .Sidebar > ul, a, h3 {
     padding-left: 30px;
 }
 
-/* Responsive */
+.Child-ListProduct > div {
+    gap: 2.5vw;
+    margin: auto;
+    width: 96%;
+    padding: 10px 0 10px 0;
+}
 
+/* Responsive */
+@media screen and (max-width: 1199px) {
+    :root {
+        --w-imageproduct: 150px;
+        --h-imageproduct: 25vw;
+    }
+}
 @media screen and (max-width: 900px) {
     .filter-bar, .Pa-container {
         width: 100vw;
@@ -130,6 +142,8 @@ div.Pa-container > .Sidebar > ul, a, h3 {
         --p-fontsize: 10px;
         --h-fontsize: 15px;  
         --w-leftcol: 100%;
+
+        --w-imageproduct: 28vw;
     }
     .Pa-container > .Child-ListProduct {
         width: var(--w-leftcol);
@@ -142,13 +156,21 @@ div.Pa-container > .Sidebar > ul, a, h3 {
         margin-top: 12px;
     }
     
-    
+    .Child-ListProduct > div {
+        gap: 6vw;
+    }
+
     .allCategory > h3 {
         font-weight: 700;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 540px) {
+    :root {
+        --w-imageproduct: 28vw;
+        --h-imageproduct: 25vw;
+    }
+
     .filter-bar > a {
         display: none;
     }
@@ -156,5 +178,21 @@ div.Pa-container > .Sidebar > ul, a, h3 {
     .filter-bar > ul > li > form > select {
         width: 50px;
     }
+
+    .Child-ListProduct > div {
+        justify-content: flex-start;
+        gap: 6vw;
+        margin: auto;
+    }
 }
 
+@media screen and (max-width: 335px) {
+    :root {
+        --w-imageproduct: 47vw;
+        --h-imageproduct: 25vw;
+    }
+
+    .Child-ListProduct > div {
+        gap: 20vw;
+    }
+}
